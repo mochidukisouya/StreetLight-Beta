@@ -510,43 +510,24 @@ public class dataEdit extends AppCompatActivity implements GoogleApiClient.Conne
                                       @Override
                                       public void onClick(View v) {
                                           if (number.getText().toString().trim().length() != 0) {
-
-                                                  if (lng.length() != 0 && lat.length() != 0) {
-
-                                                          if (amount.getText().toString().trim().length() != 0) {
-                                                              if (newTypeSelect != newTypeArray[0]) {
-                                                                  if (newPower.getText().toString().trim().length() != 0) {
-                                                                      try {
-                                                                          SLNO = String.valueOf(number.getText());
-                                                                          AREA = areaSelect;
-                                                                          O_KINDSEQNO = new JSONObject(LampAllArray[O_LampIndex]).getString("LAMPNO");
-                                                                          N_KINDSEQNO = new JSONObject(LampAllArray[N_LampIndex]).getString("LAMPNO");
-                                                                          QTY = String.valueOf(amount.getText());
-                                                                          LAMPNO_PICS= SLNO+"_1.jpg";
-                                                                          B_PICS= SLNO+"_2.jpg";
-                                                                          I_PICS= SLNO+"_3.jpg";
-                                                                          A_PICS= SLNO+"_4.jpg";
-                                                                          P_PICS= SLNO+"_5.jpg";
-                                                                          CITYNO= "1";
-                                                                          uploadData();
-                                                                      } catch (JSONException e) {
-                                                                          e.printStackTrace();
-                                                                      }
-                                                                  } else {
-                                                                      Toast.makeText(getApplicationContext(), "新燈瓦數尚未輸入", Toast.LENGTH_SHORT).show();
-                                                                  }
-                                                              } else {
-                                                                  Toast.makeText(getApplicationContext(), "新燈類型尚未選擇", Toast.LENGTH_SHORT).show();
-                                                              }
-                                                          } else {
-                                                              Toast.makeText(getApplicationContext(), "數量欄位尚未輸入", Toast.LENGTH_SHORT).show();
-                                                          }
-
-                                                  } else {
-                                                      Toast.makeText(getApplicationContext(), "座標尚未定位", Toast.LENGTH_SHORT).show();
-                                                  }
-                                          } else {
-                                              Toast.makeText(getApplicationContext(), "路燈編號尚未輸入", Toast.LENGTH_SHORT).show();
+                                              try {
+                                                  SLNO = String.valueOf(number.getText());
+                                                  AREA = areaSelect;
+                                                  O_KINDSEQNO = new JSONObject(LampAllArray[O_LampIndex]).getString("LAMPNO");
+                                                  N_KINDSEQNO = new JSONObject(LampAllArray[N_LampIndex]).getString("LAMPNO");
+                                                  QTY = String.valueOf(amount.getText());
+                                                  LAMPNO_PICS= SLNO+"_1.jpg";
+                                                  B_PICS= SLNO+"_2.jpg";
+                                                  I_PICS= SLNO+"_3.jpg";
+                                                  A_PICS= SLNO+"_4.jpg";
+                                                  P_PICS= SLNO+"_5.jpg";
+                                                  CITYNO= "1";
+                                                  uploadData();
+                                              } catch (JSONException e) {
+                                                  e.printStackTrace();
+                                              }
+                                          }else {
+                                              Toast.makeText(getApplicationContext(),"請輸入路燈編號", Toast.LENGTH_SHORT).show();
                                           }
                                       }
                                   }
@@ -598,28 +579,6 @@ public class dataEdit extends AppCompatActivity implements GoogleApiClient.Conne
 
 
     }
-
-
-//public void downloadJPG(){
-//    ImageLoader imageLoader = new ImageLoader(mQueue, new ImageLoader.ImageCache() {
-//        @Override
-//        public void putBitmap(String url, Bitmap bitmap) {
-//        }
-//
-//        @Override
-//        public Bitmap getBitmap(String url) {
-//            return null;
-//        }
-//    });
-//    ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView,
-//            R.drawable.default_image, R.drawable.failed_image);
-//    imageLoader.get(dl_JPG,
-//            listener, 200, 200);
-//}
-
-
-
-
     protected void uploadData() throws JSONException{
         RequestQueue mQuene = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://"+serverIP+ getResources().getString(R.string.url_Upload)+getResources().getString(R.string.key)+"&SEQNO="+SEQNO+"&CLSEQNO="+CLSEQNO+"&CITYNO="+CITYNO+"&hash="+hash ,
@@ -645,6 +604,7 @@ public class dataEdit extends AppCompatActivity implements GoogleApiClient.Conne
                                 finish();
                             }
                         } catch (JSONException e) {
+                            Toast.makeText(getApplicationContext(),"上傳失敗", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
 
@@ -704,14 +664,19 @@ public class dataEdit extends AppCompatActivity implements GoogleApiClient.Conne
                 param.put("LAT",lat);
                 param.put("QTY",QTY);
                 param.put("LAMPNO_PICS",LAMPNO_PICS);//燈牌照
+                if(LAMPNO_PICS_FILE!= null)
                 param.put("LAMPNO_PICS_FILE",LAMPNO_PICS_FILE);
                 param.put("B_PICS",B_PICS);//換裝前
+                if(B_PICS_FILE!= null)
                 param.put("B_PICS_FILE",B_PICS_FILE);
                 param.put("I_PICS",I_PICS);//換裝中
+                if(I_PICS_FILE!= null)
                 param.put("I_PICS_FILE",I_PICS_FILE);
                 param.put("A_PICS",A_PICS);//換裝後
+                if(A_PICS_FILE!= null)
                 param.put("A_PICS_FILE",A_PICS_FILE);
                 param.put("P_PICS",P_PICS);//電器盒
+                if(P_PICS_FILE!= null)
                 param.put("P_PICS_FILE",P_PICS_FILE);
 
 //                Log.d("WORKCLASS",user);
