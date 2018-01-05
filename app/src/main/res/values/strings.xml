@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">路燈安裝紀錄系統</string>
+    <string name="url_L">/StreetLight/api/App/WorkClassLogin?</string>
+    <string name="url_P">/StreetLight/api/App/UploadPhoto</string>
+    <string name="url_C">/StreetLight/api/App/City?</string>
+    <string name="url_Upload">/StreetLight/api/App/SaveSTREETLIGHTEvent?</string>
+    <string name="light_List">/StreetLight/api/App/GetSTREETLIGHTList?</string>
+    <string name="light_Type">/StreetLight/api/App/GetLAMPList?</string>
+    <string name="light_Detail">/StreetLight/api/App/GetSTREETLIGHTContent?</string>
+    <string name="key">key=$rS31K:x3!90X</string>>
+    <string name="secret">Ye1-X3,[S*X321</string>
+    <string name="title_activity_maps">Map</string>>
+    <string name="test">http://220.133.16.205/StreetLight/api/App/</string>
+
+</resources>
