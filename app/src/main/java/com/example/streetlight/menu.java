@@ -201,68 +201,68 @@ public class menu extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (CLSEQNO.equals(sharedPreferences.getString("CLSEQNO" , "0"))){
-                    //Log.d("XXX","XXX");
-                    CLSEQNO =sharedPreferences.getString("CLSEQNO" ,"0");
-                    SEQNO =sharedPreferences.getString("SEQNO" ,"0");
-                    lampdetail[2]=SEQNO;
-                    area_index =sharedPreferences.getInt("area_index" , 0);
-                    LNG = sharedPreferences.getString("LNG" , "0");
-                    LAT = sharedPreferences.getString("LAT" , "0");
-                    QTY = sharedPreferences.getString("QTY" , "0");
-                    O_TYPE = sharedPreferences.getString("O_TYPE" , "0");
-                    O_WATTS = sharedPreferences.getString("O_WATTS" , "0");
-                    N_TYPE = sharedPreferences.getString("N_TYPE" , "0");
-                    N_WATTS = sharedPreferences.getString("N_WATTS" , "0");
-                    isLAST = true;
-                    Log.d("+++++++++++","+++++++++++++");
-                    Log.d("CLSEQNO",CLSEQNO);
-                    Log.d("SP_CLSEQNO",sharedPreferences.getString("CLSEQNO" ,""));
-                    Log.d("SP_SEQNO",sharedPreferences.getString("SEQNO" ,""));
-                    Log.d("SP_area_index", String.valueOf(sharedPreferences.getInt("area_index" ,0)));
-                    Log.d("area_index", String.valueOf(area_index));
-                    Log.d("SP_LNG",sharedPreferences.getString("LNG" ,""));
-                    Log.d("SP_LAT",sharedPreferences.getString("LAT" ,""));
-                    Log.d("SP_QTY",sharedPreferences.getString("QTY" ,""));
-                    Log.d("SP_O_TYPE",sharedPreferences.getString("O_TYPE" ,""));
-                    Log.d("O_TYPE",O_TYPE);
-                    Log.d("SP_O_WATTS",sharedPreferences.getString("O_WATTS" ,""));
-                    Log.d("SP_N_TYPE",sharedPreferences.getString("N_TYPE" ,""));
-                    Log.d("SP_N_WATTS",sharedPreferences.getString("N_WATTS" ,""));
-                    Log.d("lampdaitl",lampdetail[2]);
-                    Log.d("----------","---------------");
-                    Intent intent = new Intent(menu.this,dataEdit.class);
+//                if (CLSEQNO.equals(sharedPreferences.getString("CLSEQNO" , "0"))){
+//                    //Log.d("XXX","XXX");
+//                    CLSEQNO =sharedPreferences.getString("CLSEQNO" ,"0");
+//                    SEQNO =sharedPreferences.getString("SEQNO" ,"0");
+//                    lampdetail[2]=SEQNO;
+//                    area_index =sharedPreferences.getInt("area_index" , 0);
+//                    LNG = sharedPreferences.getString("LNG" , "0");
+//                    LAT = sharedPreferences.getString("LAT" , "0");
+//                    QTY = sharedPreferences.getString("QTY" , "0");
+//                    O_TYPE = sharedPreferences.getString("O_TYPE" , "0");
+//                    O_WATTS = sharedPreferences.getString("O_WATTS" , "0");
+//                    N_TYPE = sharedPreferences.getString("N_TYPE" , "0");
+//                    N_WATTS = sharedPreferences.getString("N_WATTS" , "0");
+//                    isLAST = true;
+//                    Log.d("+++++++++++","+++++++++++++");
+//                    Log.d("CLSEQNO",CLSEQNO);
+//                    Log.d("SP_CLSEQNO",sharedPreferences.getString("CLSEQNO" ,""));
+//                    Log.d("SP_SEQNO",sharedPreferences.getString("SEQNO" ,""));
+//                    Log.d("SP_area_index", String.valueOf(sharedPreferences.getInt("area_index" ,0)));
+//                    Log.d("area_index", String.valueOf(area_index));
+//                    Log.d("SP_LNG",sharedPreferences.getString("LNG" ,""));
+//                    Log.d("SP_LAT",sharedPreferences.getString("LAT" ,""));
+//                    Log.d("SP_QTY",sharedPreferences.getString("QTY" ,""));
+//                    Log.d("SP_O_TYPE",sharedPreferences.getString("O_TYPE" ,""));
+//                    Log.d("O_TYPE",O_TYPE);
+//                    Log.d("SP_O_WATTS",sharedPreferences.getString("O_WATTS" ,""));
+//                    Log.d("SP_N_TYPE",sharedPreferences.getString("N_TYPE" ,""));
+//                    Log.d("SP_N_WATTS",sharedPreferences.getString("N_WATTS" ,""));
+//                    Log.d("lampdaitl",lampdetail[2]);
+//                    Log.d("----------","---------------");
+                    Intent intent = new Intent(menu.this,menu_2.class);
                     Bundle bundle = new Bundle();
-                    bundle.putString("userID", account);
-                    bundle.putString("serverIP",serverIP);
-                    bundle.putString("CLSEQNO",CLSEQNO);
-                    bundle.putString("CITYNO",CITYNO);
-                    bundle.putString("SEQNO",SEQNO);
-                    bundle.putInt("area_index",area_index);
-                    bundle.putInt("otype_index",sharedPreferences.getInt("otype_index" , 0));
-                    bundle.putInt("ntype_index",sharedPreferences.getInt("ntype_index" , 0));
-                    bundle.putString("LNG",LNG);
-                    bundle.putString("LAT",LAT);
-                    bundle.putString("QTY",QTY);
-                    bundle.putString("O_TYPE",O_TYPE);
-                    bundle.putString("N_TYPE",N_TYPE);
-                    bundle.putString("O_WATTS",O_WATTS);
-                    bundle.putString("N_WATTS",N_WATTS);
-                    bundle.putString("LAMPNO_PICS_FILE",sharedPreferences.getString("LAMPNO_PICS_FILE" ,""));
-                    bundle.putString("B_PICS_FILE",sharedPreferences.getString("B_PICS_FILE" ,""));
-                    bundle.putString("I_PICS_FILE",sharedPreferences.getString("I_PICS_FILE" ,""));
-                    bundle.putString("A_PICS_FILE",sharedPreferences.getString("A_PICS_FILE" ,""));
-                    bundle.putString("P_PICS_FILE",sharedPreferences.getString("P_PICS_FILE" ,""));
-                    bundle.putStringArray("LampTypeArray",LampTypeArray);
-                    bundle.putStringArray("LampAllArray",LampAllArray);
+//                    bundle.putString("userID", account);
+//                    bundle.putString("serverIP",serverIP);
+//                    bundle.putString("CLSEQNO",CLSEQNO);
+//                    bundle.putString("CITYNO",CITYNO);
+//                    bundle.putString("SEQNO",SEQNO);
+//                    bundle.putInt("area_index",area_index);
+//                    bundle.putInt("otype_index",sharedPreferences.getInt("otype_index" , 0));
+//                    bundle.putInt("ntype_index",sharedPreferences.getInt("ntype_index" , 0));
+//                    bundle.putString("LNG",LNG);
+//                    bundle.putString("LAT",LAT);
+//                    bundle.putString("QTY",QTY);
+//                    bundle.putString("O_TYPE",O_TYPE);
+//                    bundle.putString("N_TYPE",N_TYPE);
+//                    bundle.putString("O_WATTS",O_WATTS);
+//                    bundle.putString("N_WATTS",N_WATTS);
+//                    bundle.putString("LAMPNO_PICS_FILE",sharedPreferences.getString("LAMPNO_PICS_FILE" ,""));
+//                    bundle.putString("B_PICS_FILE",sharedPreferences.getString("B_PICS_FILE" ,""));
+//                    bundle.putString("I_PICS_FILE",sharedPreferences.getString("I_PICS_FILE" ,""));
+//                    bundle.putString("A_PICS_FILE",sharedPreferences.getString("A_PICS_FILE" ,""));
+//                    bundle.putString("P_PICS_FILE",sharedPreferences.getString("P_PICS_FILE" ,""));
+//                    bundle.putStringArray("LampTypeArray",LampTypeArray);
+//                    bundle.putStringArray("LampAllArray",LampAllArray);
                     bundle.putStringArray("lampdetail",lampdetail);
-                    bundle.putStringArray("AREAlist",AREAlist);
-                    bundle.putBoolean("isLast",isLAST);
-                    if(isLAST)
+//                    bundle.putStringArray("AREAlist",AREAlist);
+//                    bundle.putBoolean("isLast",isLAST);
+//                    if(isLAST)
                     intent.putExtras(bundle);
                     startActivity(intent);
-
-                }
+//
+//                }
 
 
 

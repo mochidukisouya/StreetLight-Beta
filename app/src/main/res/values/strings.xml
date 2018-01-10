@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">路燈安裝紀錄系統</string>
+    <string name="app_name">路燈安裝紀錄系統 Alpha</string>
     <string name="url_L">/StreetLight/api/App/WorkClassLogin?</string>
     <string name="url_P">/StreetLight/api/App/UploadPhoto</string>
     <string name="url_C">/StreetLight/api/App/City?</string>
